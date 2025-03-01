@@ -1,0 +1,19 @@
+meta {
+  name: get all media
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{content-manager}}/asset/api/file
+  body: multipartForm
+  auth: bearer
+}
+
+headers {
+  X-TenantID: defaultTenant
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiJ9.eyJ0ZW5hbnRfaWQiOiJkZWZhdWx0VGVuYW50IiwiZmlyc3ROYW1lIjoiTXlOYW1lIiwicm9sZSI6IlNVUEVSX0FETUlOIiwiYWRtaW5JZCI6MjM0NCwiaWQiOiJ0ZXN0aW5nIiwidXNlck5hbWUiOiJzb21lTmFtZSIsInVzZXJJZCI6MTExMSwic3ViIjoic29tZU5hbWUiLCJpYXQiOjE3NDA4MzQwMDksImV4cCI6MTc0MTAwNjgwOX0.18QPAAcgJFGkVZgj7fiI5QlipVJu5ujoHqagDrqlL9M
+}

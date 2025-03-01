@@ -1,0 +1,34 @@
+meta {
+  name: upload file + meta data
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{content-manager}}/asset/api/file
+  body: multipartForm
+  auth: bearer
+}
+
+headers {
+  X-TenantID: defaultTenant
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiJ9.eyJ0ZW5hbnRfaWQiOiJkZWZhdWx0VGVuYW50IiwiZmlyc3ROYW1lIjoiTXlOYW1lIiwicm9sZSI6IlNVUEVSX0FETUlOIiwiYWRtaW5JZCI6MjM0NCwiaWQiOiJ0ZXN0aW5nIiwidXNlck5hbWUiOiJzb21lTmFtZSIsInVzZXJJZCI6MTExMSwic3ViIjoic29tZU5hbWUiLCJpYXQiOjE3NDA4MzQwMDksImV4cCI6MTc0MTAwNjgwOX0.18QPAAcgJFGkVZgj7fiI5QlipVJu5ujoHqagDrqlL9M
+}
+
+body:multipart-form {
+  audioVideo: '''
+    {
+    	"mediaTitle": "testing",
+    	"description": "This is a sample media description.",
+    	"mediaType": "Video",
+    	"flags": {
+    		"flag1": "value1",
+    		"flag2": "value2"
+    	}
+     }
+  '''
+  file: @file(D:\Client Repo\video\AI Avengers-Level-Supermind-Hackathon.mp4)
+}
